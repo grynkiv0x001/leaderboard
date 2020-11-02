@@ -4,7 +4,7 @@
 We're looking for a small React SPA (single-page-application) that emulates a leaderboard. The aim of this exercise is to test your ability to write clean maintainable code and your understanding of the React library.
 
 ## Details and rules
-Your solution must be written in JS using React. The `quickstart.html` file in this repo is provided as a minimal (and optional) starting point. You could alternatively use a project scaffolding tool like create-react-app as long as you provide clear and simple instructions on how to build, test and run your project.
+Your solution must be written in JS using React. The `quickstart.html` file in this repo is provided as a minimal (and optional) starting point. You could alternatively use a project scaffolding tool like [Create React App](https://create-react-app.dev/) as long as you provide clear and simple instructions on how to build, test and run your project.
 
 You can bring in any libraries you wish - we suggest using Immutable.js, this library has been included in `quickstart.html`.
 
