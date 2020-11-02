@@ -38,6 +38,7 @@ You should make a GET request to http://coding-test.cube19.io/frontend/v1/starti
 
 An example response from this endpoint is:
 
+```json
 [
   {
     "name": "nick",
@@ -52,20 +53,25 @@ An example response from this endpoint is:
     "score": 8
   }
 ]
+```
 
 
 ### Part 3 of 5 - User Name Enrichment
 While it should be possible to add new users at any point, some users will have been pre-registered.
 
 When adding a new user, you should first POST to http://coding-test.cube19.io/frontend/v1/user-enrichment .  The payload you should send is:
+```json
 {
   "username": "the username entered"
 }
+```
 
 You will receive a response with the username to display: 
+```json
 {
   "display-name": "The username we’d like you to display"
 }
+```
 
 ### Part 4 of 5 - Display Highest Scores
 
