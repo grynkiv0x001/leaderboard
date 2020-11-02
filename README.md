@@ -6,7 +6,7 @@ We're looking for a small React SPA (single-page-application) that emulates a le
 ## Details and rules
 Your solution must be written in JS using React. The `quickstart.html` file in this repo is provided as a minimal (and optional) starting point. You could alternatively use a project scaffolding tool like [Create React App](https://create-react-app.dev/) as long as you provide clear and simple instructions on how to build, test and run your project.
 
-You can bring in any libraries you wish - we suggest using Immutable.js, this library has been included in `quickstart.html`.
+You can bring in any libraries you wish - we suggest using [Immutable.js](https://github.com/immutable-js/immutable-js), this library has been included in `quickstart.html`.
 
 We’re looking for good design and architecture sensibilities, not software perfection. Gold plating is not necessary or expected. A great partial solution will be marked much higher than a mediocre complete solution.
 
