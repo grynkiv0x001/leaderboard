@@ -56,10 +56,10 @@ An example response from this endpoint is:
 ```
 
 
-### Part 3 of 5 - User Name Enrichment
+### Part 3 of 5 - Server side user processing
 While it should be possible to add new users at any point, some users will have been pre-registered.
 
-When adding a new user, you should first POST to http://coding-test.cube19.io/frontend/v1/user-enrichment .  The payload you should send is:
+When adding a new user, you should first POST to http://coding-test.cube19.io/frontend/v1/process-user .  The payload you should send is:
 ```json
 {
   "username": "the username entered"
