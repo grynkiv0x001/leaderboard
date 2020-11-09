@@ -35,14 +35,14 @@ Your design of the leaderboard should match `leaderboard-mockup.png`.
 ### Part 2 of 5 - Load An Initial Leaderboard State
 Instead of your application starting with no users or scores, it should now load the initial state from an API.
 You should make a GET request to http://coding-test.cube19.io/frontend/v1/starting-state to receive a JSON response with initial state to display.
+20% of requests sent to this endpoint will fail, you should retry your request until it responds successfully. Some users may be missing a score attribute, you may assume a score of zero in this case.
 
 An example response from this endpoint is:
 
 ```json
 [
   {
-    "name": "nick",
-    "score": 6
+    "name": "nick"
   },
   {
     "name": "alan",
@@ -72,6 +72,8 @@ You will receive a response with the username to display:
   "display-name": "The username we’d like you to display"
 }
 ```
+
+20% of requests sent to this endpoint will fail, you should retry your request until it responds successfully.
 
 ### Part 4 of 5 - Display Highest Scores
 
