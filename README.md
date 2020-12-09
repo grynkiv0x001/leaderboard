@@ -81,7 +81,7 @@ There should be an area/areas of the app that shows:
 The highest score achieved by any player and who achieved it.
 For each player, the highest score they achieved.
 
-Your design of this section should be based on `highscores-mockup.png`.
+Your design of this section should be based on https://github.com/cube19/ui-coding-test/blob/main/rough-sketch.png.
 
 ### Part 5 of 5 - Revert to a Historical State
 
