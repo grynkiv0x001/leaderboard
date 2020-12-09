@@ -30,7 +30,7 @@ It should be possible to enter the score of a user. If a user has not been seen 
 
 A leaderboard should be shown of the users' name, rank, score. It should be clearly indicated whether users are new entrants, climbers (they’ve moved ahead of another person) or fallers (someone has moved in front of them).
 
-Your design of the leaderboard should match `leaderboard-mockup.png`.
+Your design of the leaderboard should look like this (as close as possible) https://www.figma.com/file/jAKhOyRqenu29iW9saJH5c/Leaderboard.
 
 ### Part 2 of 5 - Load An Initial Leaderboard State
 Instead of your application starting with no users or scores, it should now load the initial state from an API.
