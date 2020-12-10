@@ -8,7 +8,7 @@ Your solution must be written in JS using React. The `quickstart.html` file in t
 
 You can bring in any libraries you wish - we suggest using [Immutable.js](https://github.com/immutable-js/immutable-js), this library has been included in `quickstart.html`.
 
-We’re looking for good design and architecture sensibilities, not software perfection. Gold plating is not necessary or expected. **A great partial solution will be marked much higher than a mediocre complete solution.**
+**A great partial solution will be marked much higher than a mediocre complete solution.** We’re looking for good design and architecture sensibilities, not software perfection. Gold plating is not necessary or expected.
 
 Your solution should be:
 * Adequately tested
