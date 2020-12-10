@@ -25,10 +25,10 @@ Things we really like at cube19:
 TO SUBMIT - Please do not place code into a public source control repo (github, bitbucket, gitlab etc).  An invite to a private repo or a zip file containing all source are preferred. Please put clear instructions on how to build and run your project in a readme file.
 
 ## Functionality
-### Design
-Your design of the leaderboard should look as similar as possible to this: https://www.figma.com/file/jAKhOyRqenu29iW9saJH5c/Leaderboard
-Your design of the areas for updating / adding user scores should be based on this: https://github.com/cube19/ui-coding-test/blob/main/update-scores.png
-You can find the SVG asset for the cartoon people here: https://github.com/cube19/ui-coding-test/blob/main/business-people.svg
+### Design resources
+* Your design of the leaderboard should look as similar as possible to this: https://www.figma.com/file/jAKhOyRqenu29iW9saJH5c/Leaderboard
+* Your design of the areas for updating / adding user scores should be based on this: https://github.com/cube19/ui-coding-test/blob/main/update-scores.png
+* You can find the SVG asset for the cartoon people here: https://github.com/cube19/ui-coding-test/blob/main/business-people.svg
 
 ### Part 1 of 5 - Enter scores and show leaderboard
 It should be possible to enter the score of a new user or edit the score of an existing user. Inputs are a string for the user’s name and an integer for the user’s score.
