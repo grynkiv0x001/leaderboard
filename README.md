@@ -15,7 +15,7 @@ Your solution should be:
 * Of a quality you would be happy to run in production
 * Of a quality you would be happy to hand off to a coworker
 * As simple as possible
-* Completed in about 3 hours
+* Worked on for upto 3 hours
   * If you decide to exceed 3 hours please make a commit with the state of your repo at that point in time so we know how far you got.
 
 Things we really like at cube19:
