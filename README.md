@@ -8,7 +8,7 @@ Your solution must be written in JS using React. The `quickstart.html` file in t
 
 You can bring in any libraries you wish - we suggest using [Immutable.js](https://github.com/immutable-js/immutable-js), this library has been included in `quickstart.html`.
 
-**A great partial solution will be marked much higher than a mediocre complete solution.** We’re looking for good design and architecture sensibilities, not software perfection. Gold plating is not necessary or expected.
+**A great partial solution will be much preferred to a mediocre complete solution.** We’re looking for good design and architecture sensibilities, not software perfection. Gold plating is not necessary or expected.
 
 Your solution should be:
 * Adequately tested
@@ -16,6 +16,7 @@ Your solution should be:
 * Of a quality you would be happy to hand off to a coworker
 * As simple as possible
 * Completed in about 3 hours
+  * If you decide to exceed 3 hours please make a commit with the state of your repo at that point in time so we know how far you got.
 
 Things we really like at cube19:
 * Functional and declarative code
