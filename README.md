@@ -11,6 +11,7 @@ You can bring in any libraries you wish - we suggest using [Immutable.js](https:
 **A great partial solution will be much preferred to a mediocre complete solution.** We’re looking for good design and architecture sensibilities, not software perfection. Gold plating is not necessary or expected.
 
 Your solution should be:
+* Completed in steps, i.e. you implement step 1 fully before moving onto step 2 etc
 * Adequately tested
 * Of a quality you would be happy to run in production
 * Of a quality you would be happy to hand off to a coworker
@@ -27,7 +28,7 @@ TO SUBMIT - Please do not place code into a public source control repo (github, 
 
 ## Functionality
 ### Design resources
-* Your design of the leaderboard should look as similar as possible to this: https://www.figma.com/file/jAKhOyRqenu29iW9saJH5c/Leaderboard
+* Your design of the page should look as similar as possible to this: https://www.figma.com/file/jAKhOyRqenu29iW9saJH5c/Leaderboard
 * Your design of the areas for updating / adding user scores should be based on this: https://github.com/cube19/ui-coding-test/blob/main/update-scores.png
 * You can find the SVG asset for the cartoon people here: https://github.com/cube19/ui-coding-test/blob/main/business-people.svg
 
@@ -78,7 +79,7 @@ You will receive a response with the username to display:
 ```
 
 20% of requests sent to this endpoint will fail, you should retry your request until it responds successfully.
-
+67
 ### Part 4 of 5 - Display Highest Scores
 
 There should be an area/areas of the app that shows:
