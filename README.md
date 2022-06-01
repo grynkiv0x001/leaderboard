@@ -1,96 +1,46 @@
-# cube19 UI Coding Test
+# Getting Started with Create React App
 
-## Overview
-We're looking for a small React SPA (single-page-application) that emulates a leaderboard. The aim of this exercise is to test your ability to write clean maintainable code and your understanding of the React library.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Details and rules
-Your solution must be written in JS using React. The `quickstart.html` file in this repo is provided as a minimal (and optional) starting point. You could alternatively use a project scaffolding tool like [Create React App](https://create-react-app.dev/) as long as you provide clear and simple instructions on how to build, test and run your project.
+## Available Scripts
 
-You can bring in any libraries you wish - we suggest using [Immutable.js](https://github.com/immutable-js/immutable-js), this library has been included in `quickstart.html`.
+In the project directory, you can run:
 
-**A great partial solution will be much preferred to a mediocre complete solution.** We’re looking for good design and architecture sensibilities, not software perfection. Gold plating is not necessary or expected.
+### `npm start`
 
-Your solution should be:
-* Completed in steps, i.e. you implement step 1 fully before moving onto step 2 etc
-* Adequately tested
-* Of a quality you would be happy to run in production
-* Of a quality you would be happy to hand off to a coworker
-* As simple as possible
-* Worked on for upto 3 hours
-  * If you decide to exceed 3 hours please make a commit with the state of your repo at that point in time so we know how far you got.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-Things we really like at cube19:
-* Functional and declarative code
-* Immutability
-* Code that is (mostly) pure functions taking and returning values
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-TO SUBMIT - Please do not place code into a public source control repo (github, bitbucket, gitlab etc).  An invite to a private repo or a zip file containing all source are preferred. Please put clear instructions on how to build and run your project in a readme file.
+### `npm test`
 
-## Functionality
-### Design resources
-* Your design of the page should look as similar as possible to this: https://www.figma.com/file/jAKhOyRqenu29iW9saJH5c/Leaderboard
-* Your design of the areas for updating / adding user scores should be based on this: https://github.com/cube19/ui-coding-test/blob/main/update-scores.png
-* You can find the SVG asset for the cartoon people here: https://github.com/cube19/ui-coding-test/blob/main/business-people.svg
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### Part 1 of 5 - Enter scores and show leaderboard
-It should be possible to enter the score of a new user or edit the score of an existing user. Inputs are a string for the user’s name and an integer for the user’s score.
+### `npm run build`
 
-A leaderboard should be shown of the users' names, ranks and scores. It should be clearly indicated whether users are new entrants, climbers (they’ve moved ahead of another person) or fallers (someone has moved in front of them).
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-### Part 2 of 5 - Load initial state via ajax
-Instead of your application starting with no users or scores, it should load the initial state from an API.
-You should make a GET request to http://coding-test.cube19.io/frontend/v1/starting-state to receive a JSON response with initial state to display.
-20% of requests sent to this endpoint will fail, you should retry your request until it responds successfully. Some users may be missing a score attribute, you may assume a score of zero in this case.
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-An example response from this endpoint is:
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-```json
-[
-  {
-    "name": "nick"
-  },
-  {
-    "name": "alan",
-    "score": 11
-  },
-  {
-    "name": "chris",
-    "score": 8
-  }
-]
-```
+### `npm run eject`
 
-### Part 3 of 5 - Server side user processing
-While it should be possible to add new users at any point, some users will have been pre-registered.
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-When adding a new user, you should first POST to http://coding-test.cube19.io/frontend/v1/process-user
-The payload you should send is:
-```json
-{
-  "username": "the username entered"
-}
-```
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-You will receive a response with the username to display: 
-```json
-{
-  "display-name": "The username we’d like you to display"
-}
-```
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-20% of requests sent to this endpoint will fail, you should retry your request until it responds successfully.
-67
-### Part 4 of 5 - Display Highest Scores
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-There should be an area/areas of the app that shows:
-The highest score achieved by any player and who achieved it.
-For each player, the highest score they achieved.
+## Learn More
 
-### Part 5 of 5 - Revert to a Historical State
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-It should be possible to step back and forwards through the history of the leaderboard, undoing or redoing score changes to the users. Doing this should update both the leaderboard and high scores to the correct values for the point in history chosen.
-
-It should be clear to the user that they’re viewing a historical state.
-It should be easy for the user to get back to the latest state.
-
-The design of these controls is upto you.
+To learn React, check out the [React documentation](https://reactjs.org/).
