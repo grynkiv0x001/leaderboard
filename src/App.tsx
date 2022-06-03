@@ -1,8 +1,18 @@
 import React from 'react';
-import 'App.scss';
+// COMPONENTS
+import LeaderList from './components/LeaderList/LeaderList';
+import HighestLeaders from './components/HighestLeaders/HighestLeaders';
+// SCSS
+import './App.scss';
 
 const App = () => {
-  return <div></div>;
+  return (
+    <div className="app">
+      <h1>Leaderboard</h1>
+      <HighestLeaders />
+      <LeaderList />
+    </div>
+  );
 };
 
 export default App;
