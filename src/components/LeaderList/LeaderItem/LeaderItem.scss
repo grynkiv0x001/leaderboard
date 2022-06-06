@@ -1,0 +1,28 @@
+.leaderItem {
+  // .leaderItem_container
+  &_container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    //background-color: darkorange;
+    //border-radius: 20px;
+  }
+
+  // .leaderItem_img
+  &_img {
+    img{
+      width: 50px;
+      height: 50px;
+      border-radius: 10px;
+    }
+  }
+
+  // .leaderItem_name
+  &_name {
+  }
+
+  // .leaderItem_score
+  &_score {
+  }
+}

@@ -1,6 +1,6 @@
 .leaderList {
   width: 80%;
-  height: 1000px;
+  //height: 1000px;
   margin: 20px auto;
   box-sizing: border-box;
   padding: 0 48px;
@@ -9,7 +9,6 @@
   box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
   // .leaderList_panel
   &_panel {
-    background-color: wheat;
     display: flex;
     justify-content: space-between;
     align-items: center;
