@@ -1,8 +1,9 @@
+@import "./src/style/variables";
 .leaders {
   width: 80%;
   margin: 0 auto;
   padding: 10px 0;
-  background-color: #b65ec0;
+  background-color: var(--leader-bg-color);
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
   // .leaders_container
@@ -15,13 +16,13 @@
 
   // .leaders_box
   &_box {
-    color: white;
+    color: $col;
     width: 70%;
+  }
 
-    h3 {
-      margin-top: 0;
-      margin-left: 3px;
-    }
+  &_heading {
+    margin-top: 0;
+    margin-left: 3px;
   }
 
   // .leaders_img
@@ -49,7 +50,7 @@
     // .list_item-img
 
     &-avatar {
-      text-align: center;
+      text-align: $t-a;
 
       img {
         border-radius: 10px;
@@ -60,19 +61,19 @@
 
     // .list_item-box
     &-box {
-      text-align: center;
+      text-align: $t-a;
     }
 
     // .list_item-score
     &-score {
-      padding: 0 2.5px;
-      font-weight: bold;
+      padding: $p-0-2;
+      font-weight: $f-w;
     }
 
     // .list_item-name
     &-name {
-      font-weight: bold;
-      padding: 0 2.5px;
+      font-weight: $f-w;
+      padding: $p-0-2;
     }
   }
 }

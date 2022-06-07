@@ -19,7 +19,7 @@ const App = () => {
 
   return (
     <div className="app">
-      <h1>Leaderboard</h1>
+      <h1 className="app_heading">Leaderboard</h1>
       <HighestLeaders />
       <LeaderList />
     </div>

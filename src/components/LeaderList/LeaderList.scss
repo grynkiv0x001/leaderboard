@@ -1,12 +1,13 @@
+@import "../../style/variables";
+
 .leaderList {
   width: 80%;
-  //height: 1000px;
   margin: 20px auto;
   box-sizing: border-box;
   padding: 0 48px;
   background-color: white;
   border-radius: 20px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+  box-shadow: $b-s;
   // .leaderList_panel
   &_panel {
     display: flex;
@@ -25,42 +26,42 @@
 .box {
   // .box_button1
   &_button1 {
-    background-color: darkorange;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    padding: 10px 15px;
-    text-align: center;
-    text-decoration: none;
+    background-color: var(--button1-bg-color);
+    border: $b;
+    border-radius: $b-r-5;
+    color: $col;
+    padding: $p-10-15;
+    text-align: $t-a;
+    text-decoration: $t-d;
     font-size: 16px;
 
     &:hover {
       transition: .3s;
       cursor: pointer;
-      background-color: chocolate;
+      background-color: var(--chocolate-bg-color);
     }
     &:active{
-      background-color: coral;
+      background-color: var(--coral-bg-color);
     }
   }
   &_button2 {
     margin-left: 10px;
-    background-color: blueviolet;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    padding: 10px 15px;
-    text-align: center;
-    text-decoration: none;
+    background-color: var(--button2-bg-color);
+    border: $b;
+    border-radius:$b-r-5;
+    color: $col;
+    padding:$p-10-15;
+    text-align: $t-a;
+    text-decoration: $t-d;
     font-size: 16px;
 
     &:hover {
       transition: .3s;
       cursor: pointer;
-      background-color: darkviolet;
+      background-color: var(--leader-bg-color);
     }
     &:active{
-      background-color: blueviolet;
+      background-color: var(--button2-bg-color);
     }
   }
 }

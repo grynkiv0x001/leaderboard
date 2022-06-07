@@ -1,12 +1,16 @@
 import React from 'react';
+// HOOKS
+import { useSelector } from 'react-redux';
+// REDUX
+import getLeaders from '../../store/appStores/leaderStore/selector';
+// COMPONENTS
+import LeaderItem from './LeaderItem/LeaderItem';
 // SCSS
 import './LeaderList.scss';
-import LeaderItem from './LeaderItem/LeaderItem';
-import { useSelector } from 'react-redux';
-import getLeaders from '../../store/appStores/leaderStore/selector';
 
 const LeaderList = () => {
   const users = useSelector(getLeaders);
+  console.log(users);
 
   return (
     <div className="leaderList">
@@ -18,8 +22,8 @@ const LeaderList = () => {
         </div>
       </div>
       <ul className="leaderList_list">
-        {users?.map((user: any) => (
-          <LeaderItem key={Math.random()} name={user.name} score={user.score} />
+        {users?.map((user: any, index: number) => (
+          <LeaderItem key={Math.random()} index={index} name={user.name} score={user.score} />
         ))}
       </ul>
     </div>
