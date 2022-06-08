@@ -1,8 +1,8 @@
 import React from 'react';
 // HOOKS
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 // REDUX
-import getLeaders from '../../store/appStores/leaderStore/selector';
+// import getLeaders from '../../store/appStores/leaderStore/selector';
 // IMG
 import avatar from '../../img/avatar.svg';
 import img from '../../img/business-people.svg';
@@ -10,8 +10,8 @@ import img from '../../img/business-people.svg';
 import './HighestLeaders.scss';
 
 const HighestLeaders = () => {
-  const users = useSelector(getLeaders);
-  console.log('users', users);
+  // const users = useSelector(getLeaders);
+  // console.log('users', users);
 
   return (
     <div className="leaders">

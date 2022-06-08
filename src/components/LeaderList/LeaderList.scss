@@ -34,19 +34,21 @@
     text-align: $t-a;
     text-decoration: $t-d;
     font-size: 16px;
+    transition: all 0.25s ease;
 
     &:hover {
       transition: .3s;
       cursor: pointer;
-      background-color: var(--chocolate-bg-color);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px -10px rgba(24, 90, 219, 0.6);
     }
     &:active{
-      background-color: var(--coral-bg-color);
+      background-color: var(--chocolate-bg-color);
     }
   }
   &_button2 {
     margin-left: 10px;
-    background-color: var(--button2-bg-color);
+    background-color: var(--leader-bg-color);
     border: $b;
     border-radius:$b-r-5;
     color: $col;
@@ -54,14 +56,16 @@
     text-align: $t-a;
     text-decoration: $t-d;
     font-size: 16px;
+    transition: all 0.25s ease;
 
     &:hover {
       transition: .3s;
       cursor: pointer;
-      background-color: var(--leader-bg-color);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px -10px rgba(24, 90, 219, 0.6);
     }
     &:active{
-      background-color: var(--button2-bg-color);
+      background-color: var(--leader-bg-color);
     }
   }
 }
