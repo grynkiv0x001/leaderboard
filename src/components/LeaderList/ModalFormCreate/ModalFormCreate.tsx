@@ -7,9 +7,9 @@ import leaderActions from '../../../store/appStores/leaderStore/leaderAction';
 // ICONS
 import { FiX } from 'react-icons/fi';
 // SCSS
-import './ModalForm.scss';
+import './ModalFormCreate.scss';
 
-const ModalForm = ({ setIsOpen }: any) => {
+const ModalFormCreate = ({ setIsOpen }: any) => {
   const users = useSelector(getLeaders);
   const [name, setName] = useState('');
   const [score, setScore] = useState(0);
@@ -54,4 +54,4 @@ const ModalForm = ({ setIsOpen }: any) => {
   );
 };
 
-export default ModalForm;
+export default ModalFormCreate;

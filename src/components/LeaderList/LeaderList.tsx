@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import getLeaders from '../../store/appStores/leaderStore/selector';
 // COMPONENTS
 import LeaderItem from './LeaderItem/LeaderItem';
-import ModalForm from './ModalForm/ModalForm';
+import ModalFormCreate from './ModalFormCreate/ModalFormCreate';
 // SCSS
 import './LeaderList.scss';
 
@@ -30,7 +30,7 @@ const LeaderList = () => {
           <LeaderItem key={Math.random()} index={index} name={user.name} score={user.score} />
         ))}
       </ul>
-      {isOpen && <ModalForm setIsOpen={setIsOpen} />}
+      {isOpen && <ModalFormCreate setIsOpen={setIsOpen} />}
     </div>
   );
 };

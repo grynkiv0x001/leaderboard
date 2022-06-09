@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 // IMG
 import img from '../../../img/avatar.svg';
+// COMPONENTS
+import ModalFormEdit from './ModalFormEdit/ModalFormEdit';
 // ICONS
 import { IoMdCreate } from 'react-icons/io';
 // MODELS
@@ -9,6 +11,7 @@ import { leaderItem } from '../../../models/models';
 import './LeaderItem.scss';
 
 const LeaderItem = ({ index, name, score }: leaderItem) => {
+  const [Open, setOpen] = useState(false);
   return (
     <li className="leaderItem">
       <div className="leaderItem_container">
@@ -18,10 +21,11 @@ const LeaderItem = ({ index, name, score }: leaderItem) => {
           <span className="leaderItem_score">{score ? score : 0}</span>
           <span className="leaderItem_name">{name}</span>
         </div>
-        <div className="leaderItem_edit">
-          <IoMdCreate />
+        <div>
+          <IoMdCreate className="leaderItem_edit" onClick={() => setOpen(true)} />
         </div>
       </div>
+      {Open && <ModalFormEdit setOpen={setOpen} />}
     </li>
   );
 };
