@@ -1,14 +1,26 @@
 import React, { useState } from 'react';
-import { FiX } from 'react-icons/fi';
-import './ModalForm.scss';
+// HOOKS
+import { useSelector } from 'react-redux';
+// REDUX
+import getLeaders from '../../../store/appStores/leaderStore/selector';
 import leaderActions from '../../../store/appStores/leaderStore/leaderAction';
+// ICONS
+import { FiX } from 'react-icons/fi';
+// SCSS
+import './ModalForm.scss';
 
 const ModalForm = ({ setIsOpen }: any) => {
+  const users = useSelector(getLeaders);
   const [name, setName] = useState('');
   const [score, setScore] = useState(0);
   const createUser = () => {
-    const newUser = { username: name, score };
-    leaderActions.postUser(newUser);
+    const arr = [...users];
+
+    arr.push({
+      name: name,
+      score: score,
+    });
+    leaderActions.setList(arr);
     setIsOpen(false);
   };
   return (
