@@ -1,28 +1,26 @@
 import React, { useState } from 'react';
 // HOOKS
-// import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 // REDUX
-// import leaderActions from '../../../../store/appStores/leaderStore/leaderAction';
-// import getLeaders from '../../../../store/appStores/leaderStore/selector';
+import leaderActions from '../../../../store/appStores/leaderStore/leaderAction';
+import getLeaders from '../../../../store/appStores/leaderStore/selector';
 // ICONS
 import { FiX } from 'react-icons/fi';
+// MODELS
+import { modalFormEdit } from '../../../../models/models';
 // SCSS
 import '../../ModalFormCreate/ModalFormCreate.scss';
 
-const ModalFormEdit = ({ setOpen }: any) => {
-  // const users = useSelector(getLeaders);
+const ModalFormEdit = ({ setOpen, index }: modalFormEdit) => {
+  const users = useSelector(getLeaders);
   const [name, setName] = useState('');
   const [score, setScore] = useState(0);
-  // TODO: const createUser = () => {
-  //   const arr = [...users];
-  //
-  //   arr.push({
-  //     name: name,
-  //     score: score,
-  //   });
-  //   leaderActions.setList(arr);
-  //   setOpen(false);
-  // };
+  const editUser = () => {
+    const user = [...users];
+    user[index] = { name: name, score: score };
+    leaderActions.setList(user);
+    setOpen(false);
+  };
   return (
     <div className="modal">
       <div className="modal_container">
@@ -46,8 +44,7 @@ const ModalFormEdit = ({ setOpen }: any) => {
             onChange={(e) => setScore(e.target.valueAsNumber)}
           />
         </div>
-        <button className="modal_button">
-          {/* TODO: <button className="modal_button" onClick={createUser}>*/}
+        <button className="modal_button" onClick={editUser}>
           Edit
         </button>
       </div>

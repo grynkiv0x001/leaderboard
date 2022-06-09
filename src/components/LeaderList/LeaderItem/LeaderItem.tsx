@@ -21,11 +21,11 @@ const LeaderItem = ({ index, name, score }: leaderItem) => {
           <span className="leaderItem_score">{score ? score : 0}</span>
           <span className="leaderItem_name">{name}</span>
         </div>
-        <div>
-          <IoMdCreate className="leaderItem_edit" onClick={() => setOpen(true)} />
+        <div onClick={() => setOpen(true)}>
+          <IoMdCreate className="leaderItem_edit" />
         </div>
       </div>
-      {Open && <ModalFormEdit setOpen={setOpen} />}
+      {Open && <ModalFormEdit setOpen={setOpen} index={index} />}
     </li>
   );
 };

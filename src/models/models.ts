@@ -10,3 +10,7 @@ export interface leaderItem {
   index: number;
   score: number;
 }
+export interface modalFormEdit {
+  index: number;
+  setOpen: any;
+}
