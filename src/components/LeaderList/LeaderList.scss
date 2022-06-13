@@ -15,6 +15,13 @@
     align-items: center;
     padding-top: 5px;
   }
+  // .leaderList_box
+  &_box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 28%;
+  }
 
   // .leaderList_list
   &_list {
@@ -24,6 +31,29 @@
   }
 }
 .box {
+  // .box_lineLeft
+  &_lineLeft {
+    transition: all 0.25s ease;
+
+    &:hover {
+      transition: .3s;
+      cursor:$c-p;
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px -10px rgba(24, 90, 219, 0.6);
+    }
+  }
+
+  // .box_lineRight
+  &_lineRight {
+    transition: all 0.25s ease;
+
+    &:hover {
+      transition: .3s;
+      cursor:$c-p;
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px -10px rgba(24, 90, 219, 0.6);
+    }
+  }
   // .box_button1
   &_button1 {
     background-color: var(--button1-bg-color);
