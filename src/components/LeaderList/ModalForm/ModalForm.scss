@@ -1,0 +1,101 @@
+@import "src/style/variables";
+.modal {
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 100vw;
+  height: 100vh;
+  border-radius: 16px;
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // .modal_container
+  &_container {
+    text-align: center;
+    width: 400px;
+    height: 250px;
+    background: white;
+    color: white;
+    z-index: 10;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
+    position: relative;
+  }
+
+  // .modal_heading
+  &_heading {
+    padding: 10px;
+    color: #2c3e50;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  &_closeBtn{
+    cursor: pointer;
+    font-weight: 500;
+    padding: 4px 8px;
+    border-radius: 20px;
+    border: none;
+    font-size: 18px;
+    color: #2c3e50;
+    background: white;
+    transition: all 0.25s ease;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.06);
+    position: absolute;
+    right: 0;
+    top: 0;
+    align-self: flex-end;
+  }
+
+  // .modal_button
+  &_button {
+    background-color: var(--button3-bg-color);
+    width: 250px;
+    border: $b;
+    border-radius: $b-r-5;
+    color: $col;
+    padding: $p-10-15;
+    text-align: $t-a;
+    text-decoration: $t-d;
+    font-size: 16px;
+    transition: all 0.25s ease;
+
+    &:hover {
+      transition: .3s;
+      cursor: pointer;
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px -10px rgba(24, 90, 219, 0.6);
+    }
+    &:active{
+      background-color: var(--button2-bg-color);
+    }
+  }
+}
+
+.box {
+  // .box_input
+  &_input {
+    width: 80%;
+    margin-bottom: 1.5rem;
+    padding: 0.375rem 0.75rem;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: black;
+    background-color: white;
+    background-clip: padding-box;
+    border: 1px solid #bdbdbd;
+    border-radius: 4px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+
+
+}
+
+
+
+
+

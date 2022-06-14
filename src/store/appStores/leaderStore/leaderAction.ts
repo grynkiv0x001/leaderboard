@@ -23,9 +23,6 @@ const leaderActions = {
       leaderActions.setList(data.data);
     });
   },
-  // TODO: postUser: async (user) => {
-  //   await axios.post('')
-  // },
   setList: async (data: Array<object>) => {
     dispatch({
       type: 'SET_LIST',

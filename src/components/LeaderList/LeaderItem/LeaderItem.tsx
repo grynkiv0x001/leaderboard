@@ -13,8 +13,8 @@ const LeaderItem = ({ index, name, score }: leaderItem) => {
     <li className="leaderItem">
       <div className="leaderItem_container">
         <div className="leaderItem_box">
-          <span>{index + 1}</span>
-          <img src={img} alt="avatar" />
+          <span className="leaderItem_span">{index + 1}</span>
+          <img src={img} alt="avatar" className="leaderItem_img" />
           <span className="leaderItem_score">{score ? score : 0}</span>
           <span className="leaderItem_name">{name}</span>
         </div>
