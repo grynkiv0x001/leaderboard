@@ -42,5 +42,13 @@
 
   // .leaderItem_edit
   &_edit {
+    transition: all 0.25s ease;
+
+    &:hover {
+      transition: .3s;
+      cursor: pointer;
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px -10px rgba(24, 90, 219, 0.6);
+    }
   }
 }
