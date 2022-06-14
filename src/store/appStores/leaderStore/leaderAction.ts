@@ -3,15 +3,22 @@ import axios from 'axios';
 
 const { dispatch } = store;
 
+axios.interceptors.response.use(
+  (response) => {
+    return response;
+  },
+  (error) => {
+    if (error.response && error.response.status === 500) {
+      axios.get('http://coding-test.cube19.io/frontend/v1/starting-state').then((data) => {
+        leaderActions.setList(data.data);
+      });
+    }
+    return Promise.reject(error);
+  }
+);
+
 const leaderActions = {
   loadLeaderBoard: async () => {
-    {
-      /* TODO: const sortByScore = (arr: any) => {
-          const newUsers = arr;
-            newUsers.sort((a, b) => (a.score < b.score ? 1 : -1));
-            return newUsers;
-          };*/
-    }
     await axios.get('http://coding-test.cube19.io/frontend/v1/starting-state').then((data) => {
       leaderActions.setList(data.data);
     });

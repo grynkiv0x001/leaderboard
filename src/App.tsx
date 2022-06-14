@@ -1,9 +1,6 @@
-import React, { useEffect } from 'react';
-// HOOKS
-import { useSelector } from 'react-redux';
+import React from 'react';
 // REDUX
 import leaderActions from './store/appStores/leaderStore/leaderAction';
-import getLeaders from './store/appStores/leaderStore/selector';
 // COMPONENTS
 import LeaderList from './components/LeaderList/LeaderList';
 import HighestLeaders from './components/HighestLeaders/HighestLeaders';
@@ -11,12 +8,7 @@ import HighestLeaders from './components/HighestLeaders/HighestLeaders';
 import './App.scss';
 
 const App = () => {
-  const users = useSelector(getLeaders);
-
-  useEffect(() => {
-    leaderActions.loadLeaderBoard();
-  }, [users]);
-
+  leaderActions.loadLeaderBoard();
   return (
     <div className="app">
       <h1 className="app_heading">Leaderboard</h1>
