@@ -1,0 +1,67 @@
+@import "../../style/variables";
+
+.leaderList {
+  width: 80%;
+  margin: 20px auto;
+  box-sizing: border-box;
+  padding: 0 48px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: $b-s;
+  // .leaderList_panel
+  &_panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 5px;
+  }
+
+  // .leaderList_list
+  &_list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+}
+.box {
+  // .box_button1
+  &_button1 {
+    background-color: var(--button1-bg-color);
+    border: $b;
+    border-radius: $b-r-5;
+    color: $col;
+    padding: $p-10-15;
+    text-align: $t-a;
+    text-decoration: $t-d;
+    font-size: 16px;
+
+    &:hover {
+      transition: .3s;
+      cursor: pointer;
+      background-color: var(--chocolate-bg-color);
+    }
+    &:active{
+      background-color: var(--coral-bg-color);
+    }
+  }
+  &_button2 {
+    margin-left: 10px;
+    background-color: var(--button2-bg-color);
+    border: $b;
+    border-radius:$b-r-5;
+    color: $col;
+    padding:$p-10-15;
+    text-align: $t-a;
+    text-decoration: $t-d;
+    font-size: 16px;
+
+    &:hover {
+      transition: .3s;
+      cursor: pointer;
+      background-color: var(--leader-bg-color);
+    }
+    &:active{
+      background-color: var(--button2-bg-color);
+    }
+  }
+}
