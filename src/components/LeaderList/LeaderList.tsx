@@ -12,11 +12,12 @@ import { AiOutlineDoubleLeft } from 'react-icons/ai';
 import { AiOutlineDoubleRight } from 'react-icons/ai';
 // SCSS
 import './LeaderList.scss';
+import { Users } from '../../models/models';
 
 const LeaderList = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const users = useSelector(getLeaders);
-  console.log(users);
+  const [isOpen, setOpen] = useState(false);
+  const users: Array<Users> = useSelector(getLeaders);
+  // TODO: console.log(users);
   const newDay = () => {
     leaderActions.loadLeaderBoard();
   };
@@ -27,21 +28,20 @@ const LeaderList = () => {
         <div className="leaderList_box box">
           <AiOutlineDoubleLeft className="box_lineLeft" />
           <AiOutlineDoubleRight className="box_lineRight" />
-
           <button className="box_button1" onClick={newDay}>
             New day
           </button>
-          <button className="box_button2" onClick={() => setIsOpen(true)}>
+          <button className="box_button2" onClick={() => setOpen(true)}>
             Add new user
           </button>
         </div>
       </div>
       <ul className="leaderList_list">
-        {users?.map((user: any, index: number) => (
+        {users?.map((user, index) => (
           <LeaderItem key={Math.random()} index={index} name={user.name} score={user.score} />
         ))}
       </ul>
-      {isOpen && <ModalFormCreate setIsOpen={setIsOpen} />}
+      {isOpen && <ModalFormCreate setOpen={setOpen} />}
     </div>
   );
 };

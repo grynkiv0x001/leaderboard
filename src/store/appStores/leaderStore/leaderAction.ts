@@ -1,6 +1,6 @@
 import store from '../../store';
 import axios from 'axios';
-
+import { API_URL } from '../../../constant/API';
 const { dispatch } = store;
 
 axios.interceptors.response.use(
@@ -9,7 +9,7 @@ axios.interceptors.response.use(
   },
   (error) => {
     if (error.response && error.response.status === 500) {
-      axios.get('http://coding-test.cube19.io/frontend/v1/starting-state').then((data) => {
+      axios.get(API_URL).then((data) => {
         leaderActions.setList(data.data);
       });
     }
@@ -19,11 +19,11 @@ axios.interceptors.response.use(
 
 const leaderActions = {
   loadLeaderBoard: async () => {
-    await axios.get('http://coding-test.cube19.io/frontend/v1/starting-state').then((data) => {
+    await axios.get(API_URL).then((data) => {
       leaderActions.setList(data.data);
     });
   },
-  setList: async (data: Array<object>) => {
+  setList: async (data: Array<object> | null) => {
     dispatch({
       type: 'SET_LIST',
       leaders: data,

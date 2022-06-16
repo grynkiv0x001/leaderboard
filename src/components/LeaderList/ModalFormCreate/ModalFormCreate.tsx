@@ -4,12 +4,14 @@ import { useSelector } from 'react-redux';
 // REDUX
 import getLeaders from '../../../store/appStores/leaderStore/selector';
 import leaderActions from '../../../store/appStores/leaderStore/leaderAction';
+// MODELS
+import { IModalFormCreate } from '../../../models/models';
 // ICONS
 import { FiX } from 'react-icons/fi';
 // SCSS
 import './ModalFormCreate.scss';
 
-const ModalFormCreate = ({ setIsOpen }: any) => {
+const ModalFormCreate = ({ setOpen }: IModalFormCreate) => {
   const users = useSelector(getLeaders);
   const [name, setName] = useState('');
   const [score, setScore] = useState(0);
@@ -21,13 +23,13 @@ const ModalFormCreate = ({ setIsOpen }: any) => {
       score: score,
     });
     leaderActions.setList(arr);
-    setIsOpen(false);
+    setOpen(false);
   };
   return (
     <div className="modal">
       <div className="modal_container">
         <h2 className="modal_heading">Add new user</h2>
-        <button className="modal_closeBtn" onClick={() => setIsOpen(false)}>
+        <button className="modal_closeBtn" onClick={() => setOpen(false)}>
           <FiX />
         </button>
         <div className="modal_box box">

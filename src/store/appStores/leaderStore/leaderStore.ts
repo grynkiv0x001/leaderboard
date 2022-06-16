@@ -1,16 +1,16 @@
-import { initialStore } from '../../../models/models';
+import { IStore, IReducer } from '../../../models/models';
 
-const INITIAL_STATE: initialStore = {
+const INITIAL_STATE: IStore = {
   leaders: [],
 };
 
-const leaderStoreReducer = (state = INITIAL_STATE, action: any) => {
+const leaderStoreReducer = (state = INITIAL_STATE, action: IReducer) => {
   switch (action.type) {
     case 'SET_LIST':
       return {
         ...state,
-        // leaders: action.payload.leaders,
-        leaders: [...state.leaders, ...action.leaders],
+        leaders: action.leaders,
+        // TODO: leaders: [...state.leaders, ...action.leaders],
       };
     default:
       return state;
