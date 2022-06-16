@@ -12,11 +12,11 @@ import { AiOutlineDoubleLeft } from 'react-icons/ai';
 import { AiOutlineDoubleRight } from 'react-icons/ai';
 // SCSS
 import './LeaderList.scss';
-import { Users } from '../../models/models';
+import { User } from '../../models/models';
 
 const LeaderList = () => {
   const [isOpen, setOpen] = useState(false);
-  const users: Array<Users> = useSelector(getLeaders);
+  const users: Array<User> = useSelector(getLeaders);
   // TODO: console.log(users);
   const newDay = () => {
     leaderActions.loadLeaderBoard();

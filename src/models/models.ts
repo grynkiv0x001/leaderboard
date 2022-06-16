@@ -10,7 +10,7 @@ export type Leader = {
   index: number;
   score: number;
 };
-export type Users = {
+export type User = {
   name: string;
   score: number;
 };
