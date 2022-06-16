@@ -29,10 +29,3 @@ code {
   border-radius: 10px;
   background-color: transparent;
 }
-:root {
-  --leader-bg-color: #b65ec0;
-  --button1-bg-color: darkorange;
-  --chocolate-bg-color: chocolate;
-  --button2-bg-color:blueviolet;
-  --button3-bg-color: #b65ec0;
-}

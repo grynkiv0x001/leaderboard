@@ -6,11 +6,11 @@ import ModalFormEdit from './ModalFormEdit/ModalFormEdit';
 // ICONS
 import { IoMdCreate } from 'react-icons/io';
 // MODELS
-import { leaderItem } from '../../../models/models';
+import { Leader } from '../../../models/models';
 // SCSS
 import './LeaderItem.scss';
 
-const LeaderItem = ({ index, name, score }: leaderItem) => {
+const LeaderItem = ({ index, name, score }: Leader) => {
   const [Open, setOpen] = useState(false);
   return (
     <li className="leaderItem">

@@ -1,16 +1,23 @@
-export interface initialStore {
-  leaders: Array<object>;
+export interface IStore {
+  leaders: Array<object> | null;
 }
-export interface storeReducer {
+export interface IReducer {
   type: string;
-  leaders: Array<object>;
+  leaders: Array<object> | null;
 }
-export interface leaderItem {
+export type Leader = {
   name: string;
   index: number;
   score: number;
-}
-export interface modalFormEdit {
+};
+export type User = {
+  name: string;
+  score: number;
+};
+export interface IModalFormEdit {
   index: number;
-  setOpen: any;
+  setOpen: (arg: boolean) => void;
+}
+export interface IModalFormCreate {
+  setOpen: (arg: boolean) => void;
 }

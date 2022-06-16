@@ -1,6 +1,7 @@
 @import "src/style/variables";
+
 .modal {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color:$modal-bg-color;
   width: 100vw;
   height: 100vh;
   border-radius: 16px;
@@ -12,7 +13,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  // .modal_container
+
   &_container {
     text-align: center;
     width: 400px;
@@ -21,44 +22,42 @@
     color: white;
     z-index: 10;
     border-radius: 16px;
-    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
+    box-shadow: $modal-container-box-shadow;
     position: relative;
   }
 
-  // .modal_heading
   &_heading {
     padding: 10px;
     color: #2c3e50;
     font-weight: bold;
     font-size: 18px;
   }
-  &_closeBtn{
+
+  &_closeBtn {
     cursor: pointer;
     font-weight: 500;
     padding: 4px 8px;
     border-radius: 20px;
-    border: $b;
+    border: none;
     font-size: 18px;
     color: #2c3e50;
     background: white;
     transition: all 0.25s ease;
-    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.06);
     position: absolute;
     right: 2px;
     top: 6px;
     align-self: flex-end;
   }
 
-  // .modal_button
   &_button {
-    background-color: var(--button3-bg-color);
+    background-color:$modal-button-bg-color;
     width: 250px;
-    border: $b;
-    border-radius: $b-r-5;
-    color: $col;
-    padding: $p-10-15;
-    text-align: $t-a;
-    text-decoration: $t-d;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
     font-size: 16px;
     transition: all 0.25s ease;
 
@@ -66,16 +65,16 @@
       transition: .3s;
       cursor: pointer;
       transform: translateY(-5px);
-      box-shadow: 0 10px 20px -10px rgba(24, 90, 219, 0.6);
+      box-shadow: $general-hover-box-shadow;
     }
-    &:active{
-      background-color: var(--button2-bg-color);
+
+    &:active {
+      background-color:$modal-active-bg-color;
     }
   }
 }
 
 .box {
-  // .box_input
   &_input {
     width: 80%;
     margin-bottom: 1.5rem;
@@ -91,8 +90,6 @@
     border-radius: 4px;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   }
-
-
 }
 
 

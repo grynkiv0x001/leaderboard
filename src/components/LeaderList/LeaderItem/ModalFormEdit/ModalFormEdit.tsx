@@ -7,11 +7,11 @@ import getLeaders from '../../../../store/appStores/leaderStore/selector';
 // ICONS
 import { FiX } from 'react-icons/fi';
 // MODELS
-import { modalFormEdit } from '../../../../models/models';
+import { IModalFormEdit } from '../../../../models/models';
 // SCSS
 import '../../ModalFormCreate/ModalFormCreate.scss';
 
-const ModalFormEdit = ({ setOpen, index }: modalFormEdit) => {
+const ModalFormEdit = ({ setOpen, index }: IModalFormEdit) => {
   const users = useSelector(getLeaders);
   const [name, setName] = useState('');
   const [score, setScore] = useState(0);
