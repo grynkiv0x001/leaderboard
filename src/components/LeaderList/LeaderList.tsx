@@ -17,7 +17,7 @@ import { User } from '../../models/models';
 const LeaderList = () => {
   const [isOpen, setOpen] = useState(false);
   const users: Array<User> = useSelector(getLeaders);
-  // TODO: console.log(users);
+  console.log('users', users);
   const newDay = () => {
     leaderActions.loadLeaderBoard();
   };
