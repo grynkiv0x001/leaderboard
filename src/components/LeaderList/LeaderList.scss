@@ -20,7 +20,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 28%;
+    width: 40%;
   }
 
   &_list {
@@ -61,46 +61,72 @@
     }
   }
 
-  &_button1 {
-    background-color: $new-day-bg-color;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    padding: 10px 15px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    transition: all 0.25s ease;
+  &_button {
+    &-filter {
+      background-color:$filter-bg-color;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      padding: 10px 15px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 16px;
+      transition: all 0.25s ease;
 
-    &:hover {
-      transition: .3s;
-      cursor: pointer;
-      transform: translateY(-5px);
-      box-shadow: $general-hover-box-shadow;
+      &:hover {
+        transition: .3s;
+        cursor: pointer;
+        transform: translateY(-5px);
+        box-shadow: $general-hover-box-shadow;
+      }
+
+      &:active {
+        background-color:$filter-active-bg-color;
+      }
     }
 
-    &:active {
-      background-color: $new-day-active-bg-color;
+    &-newDay {
+      background-color: $new-day-bg-color;
+      margin-left: 10px;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      padding: 10px 15px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 16px;
+      transition: all 0.25s ease;
+
+      &:hover {
+        transition: .3s;
+        cursor: pointer;
+        transform: translateY(-5px);
+        box-shadow: $general-hover-box-shadow;
+      }
+
+      &:active {
+        background-color: $new-day-active-bg-color;
+      }
     }
-  }
 
-  &_button2 {
-    margin-left: 10px;
-    background-color: $add-user-bg-color;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    padding: 10px 15px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    transition: all 0.25s ease;
+    &-newUser {
+      margin-left: 10px;
+      background-color: $add-user-bg-color;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      padding: 10px 15px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 16px;
+      transition: all 0.25s ease;
 
-    &:hover {
-      transition: .3s;
-      cursor: pointer;
-      transform: translateY(-5px);
-      box-shadow: $general-hover-box-shadow;
+      &:hover {
+        transition: .3s;
+        cursor: pointer;
+        transform: translateY(-5px);
+        box-shadow: $general-hover-box-shadow;
+      }
     }
   }
 }

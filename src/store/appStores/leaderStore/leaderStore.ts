@@ -1,4 +1,4 @@
-import { IStore, IReducer } from '../../../models/models';
+import { IReducer, IStore } from '../../../models/models';
 
 const INITIAL_STATE: IStore = {
   leaders: [],
