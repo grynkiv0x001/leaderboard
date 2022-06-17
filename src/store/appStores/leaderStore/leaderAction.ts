@@ -9,6 +9,7 @@ const sortByScore = (arr: Array<User>) => {
   arr.sort((a, b) => (a.score < b.score ? 1 : -1));
   return arr;
 };
+
 axios.interceptors.response.use(
   (response) => {
     return response;
@@ -32,6 +33,7 @@ const leaderActions = {
     });
   },
   setList: async (data: Array<object> | null) => {
+    ``;
     dispatch({
       type: 'SET_LIST',
       leaders: data,

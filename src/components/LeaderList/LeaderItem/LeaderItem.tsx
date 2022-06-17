@@ -18,7 +18,6 @@ const LeaderItem = ({ index, name, score }: Leader) => {
         <div className="leaderItem_box">
           <span className="leaderItem_span">{index + 1}</span>
           <img src={img} alt="avatar" className="leaderItem_img" />
-          {/* <span className="leaderItem_score">{score}</span>*/}
           <span className="leaderItem_score">{score ? score : 0}</span>
           <span className="leaderItem_name">{name}</span>
         </div>
