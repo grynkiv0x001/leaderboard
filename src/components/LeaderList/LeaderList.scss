@@ -40,25 +40,11 @@
   }
 
   &_lineLeft {
-    transition: all 0.25s ease;
-
-    &:hover {
-      transition: .3s;
-      cursor: pointer;
-      transform: translateY(-5px);
-      box-shadow: $general-hover-box-shadow;
-    }
+    cursor: pointer;
   }
 
   &_lineRight {
-    transition: all 0.25s ease;
-
-    &:hover {
-      transition: .3s;
-      cursor: pointer;
-      transform: translateY(-5px);
-      box-shadow: $general-hover-box-shadow;
-    }
+    cursor: pointer;
   }
 
   &_button {
@@ -129,4 +115,7 @@
       }
     }
   }
+}
+.none{
+  visibility: hidden;
 }

@@ -1,9 +1,9 @@
 export interface IStore {
-  leaders: Array<object> | null;
+  leaders: Array<object>;
 }
 export interface IReducer {
   type: string;
-  leaders: Array<object> | null;
+  leaders: Array<object>;
 }
 export type Leader = {
   name: string;

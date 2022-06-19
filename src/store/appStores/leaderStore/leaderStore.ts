@@ -9,8 +9,8 @@ const leaderStoreReducer = (state = INITIAL_STATE, action: IReducer) => {
     case 'SET_LIST':
       return {
         ...state,
-        leaders: action.leaders,
-        // TODO: leaders: [...state.leaders, ...action.leaders],
+        // leaders: action.leaders,
+        leaders: [...state.leaders, action.leaders],
       };
     default:
       return state;

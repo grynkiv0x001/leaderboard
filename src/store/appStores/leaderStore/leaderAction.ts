@@ -32,8 +32,7 @@ const leaderActions = {
       leaderActions.setList(users);
     });
   },
-  setList: async (data: Array<object> | null) => {
-    ``;
+  setList: async (data: Array<object>) => {
     dispatch({
       type: 'SET_LIST',
       leaders: data,
