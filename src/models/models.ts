@@ -6,18 +6,16 @@ export interface IReducer {
   leaders: Array<object>;
 }
 export type Leader = {
-  name: string;
   index: number;
-  score: number;
   page: number;
+  user: User;
 };
 export type User = {
   name: string;
   score: number;
 };
 export interface IModalFormEdit {
-  userName: string;
-  userScore: number;
+  user: User;
   index: number;
   page: number;
   setOpen: (arg: boolean) => void;

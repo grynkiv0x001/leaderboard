@@ -3,7 +3,7 @@ import React from 'react';
 import leaderActions from './store/appStores/leaderStore/leaderAction';
 // COMPONENTS
 import LeaderList from './components/LeaderList/LeaderList';
-import HighestLeaders from './components/HighestLeaders/HighestLeaders';
+import TopLeaders from './components/TopLeaders/TopLeaders';
 // SCSS
 import './App.scss';
 
@@ -12,7 +12,7 @@ const App = () => {
   return (
     <div className="app">
       <h1 className="app_heading">Leaderboard</h1>
-      <HighestLeaders />
+      <TopLeaders />
       <LeaderList />
     </div>
   );
