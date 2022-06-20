@@ -2,23 +2,24 @@ import React, { useState } from 'react';
 // HOOKS
 import { useSelector } from 'react-redux';
 // REDUX
-import leaderActions from '../../../../store/appStores/leaderStore/leaderAction';
 import getLeaders from '../../../../store/appStores/leaderStore/selector';
+import leaderActions from '../../../../store/appStores/leaderStore/leaderAction';
 // ICONS
 import { FiX } from 'react-icons/fi';
 // MODELS
-import { IModalFormEdit } from '../../../../models/models';
+import { IModalFormEdit, User } from '../../../../models/models';
 // SCSS
 import '../../ModalFormCreate/ModalFormCreate.scss';
 
-const ModalFormEdit = ({ setOpen, index }: IModalFormEdit) => {
-  const users = useSelector(getLeaders);
-  const [name, setName] = useState('');
-  const [score, setScore] = useState(0);
+const ModalFormEdit = ({ setOpen, userName, userScore, index, page }: IModalFormEdit) => {
+  const [name, setName] = useState(userName);
+  const [score, setScore] = useState(userScore);
+  const users: Array<Array<User>> = useSelector(getLeaders);
   const editUser = () => {
-    const user = [...users];
-    user[index] = { name: name, score: score };
-    leaderActions.setList(user);
+    const newUser = { name: name, score: score };
+    const arr = users;
+    arr[page].splice(index, 1, newUser);
+    leaderActions.editUser(arr);
     setOpen(false);
   };
   return (
@@ -44,7 +45,7 @@ const ModalFormEdit = ({ setOpen, index }: IModalFormEdit) => {
             onChange={(e) => setScore(e.target.valueAsNumber)}
           />
         </div>
-        <button className="modal_button" onClick={editUser}>
+        <button className="modal_button" onClick={() => editUser()}>
           Edit
         </button>
       </div>

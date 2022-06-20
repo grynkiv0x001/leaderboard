@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 // HOOKS
 import { useSelector } from 'react-redux';
 // REDUX
@@ -18,23 +18,16 @@ import './LeaderList.scss';
 const LeaderList = () => {
   const [isOpen, setOpen] = useState(false);
   const users: Array<Array<User>> = useSelector(getLeaders);
-  const [data, setData] = useState(users);
   const [page, setPage] = useState(0);
-  const user = data[page];
-  console.log(users);
-  useEffect(() => {
-    if (users) {
-      setData(users);
-    }
-  }, [users]);
+  const user = users[page];
   const newDay = () => {
     leaderActions.loadLeaderBoard();
   };
   const sortByName = () => {
     const sorted = [...user].sort((a, b) => (a.name > b.name ? 1 : -1));
-    const arr = [sorted];
-    setData(arr);
-    // leaderActions.setList(sorted);
+    const arr = users;
+    arr.splice(page, 1, sorted);
+    leaderActions.setList(arr);
   };
   return (
     <div className="leaderList">
@@ -62,10 +55,16 @@ const LeaderList = () => {
       </div>
       <ul className="leaderList_list">
         {user?.map((user, index) => (
-          <LeaderItem key={Math.random()} index={index} name={user.name} score={user.score} />
+          <LeaderItem
+            key={Math.random()}
+            page={page}
+            index={index}
+            name={user.name}
+            score={user.score}
+          />
         ))}
       </ul>
-      {isOpen && <ModalFormCreate setOpen={setOpen} />}
+      {isOpen && <ModalFormCreate setOpen={setOpen} page={page} />}
     </div>
   );
 };

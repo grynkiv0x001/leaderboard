@@ -11,18 +11,17 @@ import { FiX } from 'react-icons/fi';
 // SCSS
 import './ModalFormCreate.scss';
 
-const ModalFormCreate = ({ setOpen }: IModalFormCreate) => {
+const ModalFormCreate = ({ setOpen, page }: IModalFormCreate) => {
   const users = useSelector(getLeaders);
   const [name, setName] = useState('');
   const [score, setScore] = useState(0);
   const createUser = () => {
-    const arr = [...users];
-
+    const arr = users[page];
     arr.push({
       name: name,
       score: score,
     });
-    leaderActions.setList(arr);
+    leaderActions.addUser(arr);
     setOpen(false);
   };
   return (
