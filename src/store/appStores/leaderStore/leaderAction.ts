@@ -18,7 +18,7 @@ axios.interceptors.response.use(
     if (error.response && error.response.status === 500) {
       axios.get(API_URL).then((data) => {
         const users = sortByScore(data.data);
-        leaderActions.setList(users);
+        leaderActions.addList(users);
       });
     }
     return Promise.reject(error);
@@ -29,14 +29,31 @@ const leaderActions = {
   loadLeaderBoard: async () => {
     await axios.get(API_URL).then((data) => {
       const users = sortByScore(data.data);
-      leaderActions.setList(users);
+      leaderActions.addList(users);
     });
   },
-  setList: async (data: Array<object> | null) => {
-    ``;
+  addList: async (data: Array<object>) => {
+    dispatch({
+      type: 'ADD_LIST',
+      leaders: data,
+    });
+  },
+  setList: async (page: Array<object>) => {
     dispatch({
       type: 'SET_LIST',
-      leaders: data,
+      leaders: page,
+    });
+  },
+  addUser: async (user: Array<object>) => {
+    dispatch({
+      type: 'ADD_USER',
+      leaders: user,
+    });
+  },
+  editUser: async (user: Array<object>) => {
+    dispatch({
+      type: 'EDIT_USER',
+      leaders: user,
     });
   },
 };

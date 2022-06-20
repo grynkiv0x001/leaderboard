@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 // HOOKS
 import { useSelector } from 'react-redux';
 // REDUX
@@ -17,29 +17,31 @@ import './LeaderList.scss';
 
 const LeaderList = () => {
   const [isOpen, setOpen] = useState(false);
-  const users: Array<User> = useSelector(getLeaders);
-  const [data, setData] = useState(users);
-  console.log(users);
-  useEffect(() => {
-    if (users) {
-      setData(users);
-    }
-  }, [users]);
+  const users: Array<Array<User>> = useSelector(getLeaders);
+  const [page, setPage] = useState(0);
+  const user = users[page];
   const newDay = () => {
     leaderActions.loadLeaderBoard();
   };
   const sortByName = () => {
-    const sorted = [...data].sort((a, b) => (a.name > b.name ? 1 : -1));
-    setData(sorted);
-    leaderActions.setList(sorted);
+    const sorted = [...user].sort((a, b) => (a.name > b.name ? 1 : -1));
+    const arr = users;
+    arr.splice(page, 1, sorted);
+    leaderActions.setList(arr);
   };
   return (
     <div className="leaderList">
       <div className="leaderList_panel">
         <h3>Leaders table for this region</h3>
         <div className="leaderList_box box">
-          <AiOutlineDoubleLeft className="box_lineLeft" />
-          <AiOutlineDoubleRight className="box_lineRight" />
+          <AiOutlineDoubleLeft
+            className={`box_lineLeft ${page !== 0 ? '' : 'none'}`}
+            onClick={() => setPage(page - 1)}
+          />
+          <AiOutlineDoubleRight
+            className={`box_lineRight ${page + 1 !== users.length ? '' : 'none'}`}
+            onClick={() => setPage(page + 1)}
+          />
           <button className="box_button-filter" onClick={sortByName}>
             Filter by name
           </button>
@@ -52,11 +54,17 @@ const LeaderList = () => {
         </div>
       </div>
       <ul className="leaderList_list">
-        {data?.map((user, index) => (
-          <LeaderItem key={Math.random()} index={index} name={user.name} score={user.score} />
+        {user?.map((user, index) => (
+          <LeaderItem
+            key={Math.random()}
+            page={page}
+            index={index}
+            name={user.name}
+            score={user.score}
+          />
         ))}
       </ul>
-      {isOpen && <ModalFormCreate setOpen={setOpen} />}
+      {isOpen && <ModalFormCreate setOpen={setOpen} page={page} />}
     </div>
   );
 };
