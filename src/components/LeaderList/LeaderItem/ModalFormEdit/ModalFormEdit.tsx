@@ -11,9 +11,9 @@ import { IModalFormEdit, User } from '../../../../models/models';
 // SCSS
 import '../../ModalFormCreate/ModalFormCreate.scss';
 
-const ModalFormEdit = ({ setOpen, userName, userScore, index, page }: IModalFormEdit) => {
-  const [name, setName] = useState(userName);
-  const [score, setScore] = useState(userScore);
+const ModalFormEdit = ({ setOpen, user, index, page }: IModalFormEdit) => {
+  const [name, setName] = useState(user.name);
+  const [score, setScore] = useState(user.score);
   const users: Array<Array<User>> = useSelector(getLeaders);
   const editUser = () => {
     const newUser = { name: name, score: score };

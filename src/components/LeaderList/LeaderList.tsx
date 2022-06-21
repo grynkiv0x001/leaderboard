@@ -19,12 +19,12 @@ const LeaderList = () => {
   const [isOpen, setOpen] = useState(false);
   const users: Array<Array<User>> = useSelector(getLeaders);
   const [page, setPage] = useState(0);
-  const user = users[page];
+  const currentUser = users[page];
   const newDay = () => {
     leaderActions.loadLeaderBoard();
   };
   const sortByName = () => {
-    const sorted = [...user].sort((a, b) => (a.name > b.name ? 1 : -1));
+    const sorted = [...currentUser].sort((a, b) => (a.name > b.name ? 1 : -1));
     const arr = users;
     arr.splice(page, 1, sorted);
     leaderActions.setList(arr);
@@ -54,14 +54,8 @@ const LeaderList = () => {
         </div>
       </div>
       <ul className="leaderList_list">
-        {user?.map((user, index) => (
-          <LeaderItem
-            key={Math.random()}
-            page={page}
-            index={index}
-            name={user.name}
-            score={user.score}
-          />
+        {currentUser?.map((user, index) => (
+          <LeaderItem key={Math.random()} page={page} user={user} index={index} />
         ))}
       </ul>
       {isOpen && <ModalFormCreate setOpen={setOpen} page={page} />}
