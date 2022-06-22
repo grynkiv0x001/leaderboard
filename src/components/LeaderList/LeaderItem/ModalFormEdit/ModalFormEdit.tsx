@@ -19,6 +19,7 @@ const ModalFormEdit = ({ setOpen, user, index, page }: IModalFormEdit) => {
     const newUser = { name: name, score: score };
     const arr = users;
     arr[page].splice(index, 1, newUser);
+    arr[page].sort((a, b) => (a.score < b.score ? 1 : -1));
     leaderActions.editUser(arr);
     setOpen(false);
   };

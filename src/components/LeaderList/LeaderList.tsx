@@ -15,16 +15,16 @@ import { AiOutlineDoubleRight } from 'react-icons/ai';
 import { BsFillPersonPlusFill } from 'react-icons/bs';
 import { BsCalendarPlus } from 'react-icons/bs';
 import { BsSortAlphaUp } from 'react-icons/bs';
-
 // SCSS
 import './LeaderList.scss';
 
 const LeaderList = () => {
   const [isOpen, setOpen] = useState(false);
   const [showStatistic, setShowStatistic] = useState(false);
-  const users: Array<Array<User>> = useSelector(getLeaders);
   const [page, setPage] = useState(0);
+  const users: Array<Array<User>> = useSelector(getLeaders);
   const currentUser = users[page];
+
   const getDifference = (array1: Array<User>, array2: Array<User>) => {
     const newArr = [];
     for (let i = 0; i < array1.length; i++) {
@@ -33,16 +33,18 @@ const LeaderList = () => {
     return newArr;
   };
   const newDay = () => {
+    leaderActions.loadLeaderBoard();
     const lastDay = users[users.length - 1];
     const previousDay = users[users.length - 2];
-    const sortedLastDay = [...lastDay].sort((a, b) => (a.name > b.name ? 1 : -1));
-    const sortedPreviousDay = [...previousDay].sort((a, b) => (a.name > b.name ? 1 : -1));
-    const different = getDifference(sortedPreviousDay, sortedLastDay);
+    const sortedLastDay = [...lastDay]?.sort((a, b) => (a.name > b.name ? 1 : -1));
+    const sortedPreviousDay = [...previousDay]?.sort((a, b) => (a.name > b.name ? 1 : -1));
+    console.log(sortedLastDay);
+    console.log(sortedPreviousDay);
+    const different = getDifference(sortedLastDay, sortedPreviousDay);
     const newArr: Array<User> = [];
     lastDay.map((item, index) => newArr.push({ ...item, diff: different[index] }));
     users.splice(users.length - 1, 1, newArr);
     leaderActions.addDifference(newArr);
-    leaderActions.loadLeaderBoard();
     setShowStatistic(true);
   };
   const sortByName = () => {

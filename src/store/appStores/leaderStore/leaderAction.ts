@@ -19,6 +19,7 @@ axios.interceptors.response.use(
     if (error.response && error.response.status === 500) {
       axios.get(API_URL).then((data) => {
         const users = sortByScore(data.data);
+        // const users: Array<User> = data.data;
         users.map((user) => {
           if (user.score == undefined) {
             user.score = 0;
@@ -35,6 +36,7 @@ const leaderActions = {
   loadLeaderBoard: async () => {
     await axios.get(API_URL).then((data) => {
       const users = sortByScore(data.data);
+      // const users: Array<User> = data.data;
       users.map((user) => {
         if (user.score == undefined) {
           user.score = 0;
