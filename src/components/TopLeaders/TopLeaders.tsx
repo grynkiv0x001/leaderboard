@@ -13,9 +13,7 @@ import './TopLeaders.scss';
 
 const TopLeaders = () => {
   const users: Array<Array<User>> = useSelector(getLeaders);
-  // console.log('users', users);
   const allUsers = users.flat(1);
-  console.log(allUsers);
   allUsers.sort((el) => (el.score ? 1 : -1));
   allUsers.sort((a, b) => (a.score < b.score ? 1 : -1));
   const leader = allUsers.slice(0, 4);

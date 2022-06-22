@@ -1,5 +1,5 @@
 import { IReducer, IStore } from '../../../models/models';
-import { ADD_LIST, ADD_USER, EDIT_USER, SET_LIST } from '../../../constant/TYPES';
+import { ADD_LIST, ADD_USER, EDD_DIFFERENCE, EDIT_USER, SET_LIST } from '../../../constant/TYPES';
 
 const INITIAL_STATE: IStore = {
   leaders: [],
@@ -26,6 +26,11 @@ const leaderStoreReducer = (state = INITIAL_STATE, action: IReducer) => {
       return {
         ...state,
         leaders: [...action.leaders],
+      };
+    case EDD_DIFFERENCE:
+      return {
+        ...state,
+        leaders: [...state.leaders],
       };
     default:
       return state;
