@@ -10,6 +10,15 @@ const sortByScore = (arr: Array<User>) => {
   arr.sort((a, b) => (a.score < b.score ? 1 : -1));
   return arr;
 };
+const responseApi = (data: Array<User>) => {
+  const users = sortByScore(data);
+  users.map((user) => {
+    if (user.score == undefined) {
+      user.score = 0;
+    }
+  });
+  leaderActions.addList(users);
+};
 
 axios.interceptors.response.use(
   (response) => {
@@ -18,14 +27,7 @@ axios.interceptors.response.use(
   (error) => {
     if (error.response && error.response.status === 500) {
       axios.get(API_URL).then((data) => {
-        const users = sortByScore(data.data);
-        // const users: Array<User> = data.data;
-        users.map((user) => {
-          if (user.score == undefined) {
-            user.score = 0;
-          }
-        });
-        leaderActions.addList(users);
+        responseApi(data.data);
       });
     }
     return Promise.reject(error);
@@ -35,14 +37,7 @@ axios.interceptors.response.use(
 const leaderActions = {
   loadLeaderBoard: async () => {
     await axios.get(API_URL).then((data) => {
-      const users = sortByScore(data.data);
-      // const users: Array<User> = data.data;
-      users.map((user) => {
-        if (user.score == undefined) {
-          user.score = 0;
-        }
-      });
-      leaderActions.addList(users);
+      responseApi(data.data);
     });
   },
   addList: async (data: Array<object>) => {

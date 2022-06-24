@@ -2,7 +2,7 @@ import React from 'react';
 // HOOKS
 import { useSelector } from 'react-redux';
 // REDUX
-import getLeaders from '../../store/appStores/leaderStore/selector';
+import getLeaders from '../../store/appStores/leaderStore/selectorLeaders';
 // MODELS
 import { User } from '../../models/models';
 // IMG

@@ -1,9 +1,16 @@
-export interface IStore {
+export interface IStoreLeaders {
   leaders: Array<object> | Array<number>;
 }
-export interface IReducer {
+export interface IReducerLeaders {
   type: string;
   leaders: Array<object> | Array<number>;
+}
+export interface IStoreSettings {
+  sorting: string;
+}
+export interface IReducerSettings {
+  type: string;
+  sorting: string;
 }
 export type Leader = {
   index: number;
