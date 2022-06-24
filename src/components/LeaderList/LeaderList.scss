@@ -21,12 +21,59 @@
     justify-content: space-between;
     align-items: center;
     width: 40%;
+    position: relative;
   }
+
+  @media (max-width: 1440px) {
+    &_box {
+      width: 41%;
+    }
+  }
+  @media (max-width: 1100px) {
+    &_box {
+      width: 55%;
+    }
+  }
+  @media (max-width: 964px) {
+    &_box {
+      width: 60%;
+    }
+    &_heading{
+      font-size: 15px;
+    }
+  }
+  @media (max-width: 769px) {
+    &_box {
+      width: 55%;
+    }
+    &_heading{
+      font-size: 14px;
+    }
+  }
+  @media (max-width: 600px) {
+    &_box {
+      width: 55%;
+    }
+    &_heading{
+      font-size: 12px;
+    }
+  }
+
 
   &_list {
     margin: 0;
     padding: 0;
     list-style-type: none;
+  }
+}
+@media (max-width: 450px) {
+  .leaderList {
+    padding: 0 30px;
+  }
+}
+@media (max-width: 450px) {
+  .leaderList {
+    width: 95%;
   }
 }
 
@@ -48,8 +95,12 @@
   }
 
   &_button {
+    &-icon{
+      font-size: 17px;
+      padding: 0 10px;
+    }
     &-filter {
-      background-color:$filter-bg-color;
+      background-color: $filter-bg-color;
       border: none;
       border-radius: 5px;
       color: white;
@@ -67,7 +118,7 @@
       }
 
       &:active {
-        background-color:$filter-active-bg-color;
+        background-color: $filter-active-bg-color;
       }
     }
 
@@ -114,8 +165,71 @@
         box-shadow: $general-hover-box-shadow;
       }
     }
+
+    @media (max-width: 1440px) {
+      &-filter {
+        margin-left: 0;
+        padding: 10px 10px;
+        font-size: 14px;
+      }
+
+      &-newDay {
+        margin-left: 0;
+        padding: 10px 10px;
+        font-size: 14px;
+      }
+
+      &-newUser {
+        margin-left: 0;
+        padding: 10px 10px;
+        font-size: 14px;
+      }
+    }
+    @media (max-width: 964px) {
+      &-filter {
+        margin-left: 2px;
+        padding: 10px 10px;
+        font-size: 12px;
+      }
+
+      &-newDay {
+        margin-left: 2px;
+        padding: 10px 10px;
+        font-size: 12px;
+      }
+
+      &-newUser {
+        margin-left: 2px;
+        padding: 10px 10px;
+        font-size: 12px;
+      }
+    }
+    @media (min-width: 770px) {
+      &-icon{
+        display: none;
+      }
+    }
+    @media (max-width: 769px) {
+      &-span{
+        display: none;
+      }
+    }
+    @media (max-width: 600px) {
+      &-filter {
+        padding: 5px 0;
+      }
+
+      &-newDay {
+        padding: 5px 0;
+      }
+
+      &-newUser {
+        padding: 5px 0;
+      }
+    }
   }
 }
-.none{
+
+.none {
   visibility: hidden;
 }

@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 // HOOKS
 import { useSelector } from 'react-redux';
 // REDUX
-import getLeaders from '../../../../store/appStores/leaderStore/selector';
+import getLeaders from '../../../../store/appStores/leaderStore/selectorLeaders';
+import getSettings from '../../../../store/appStores/settingStore/selectorSettings';
 import leaderActions from '../../../../store/appStores/leaderStore/leaderAction';
 // ICONS
 import { FiX } from 'react-icons/fi';
@@ -12,13 +13,19 @@ import { IModalFormEdit, User } from '../../../../models/models';
 import '../../ModalFormCreate/ModalFormCreate.scss';
 
 const ModalFormEdit = ({ setOpen, user, index, page }: IModalFormEdit) => {
+  const users: Array<Array<User>> = useSelector(getLeaders);
+  const sorting = useSelector(getSettings);
   const [name, setName] = useState(user.name);
   const [score, setScore] = useState(user.score);
-  const users: Array<Array<User>> = useSelector(getLeaders);
   const editUser = () => {
     const newUser = { name: name, score: score };
     const arr = users;
     arr[page].splice(index, 1, newUser);
+    if (sorting === 'name') {
+      arr[page].sort((a, b) => (a.name > b.name ? 1 : -1));
+    } else {
+      arr[page].sort((a, b) => (a.score < b.score ? 1 : -1));
+    }
     leaderActions.editUser(arr);
     setOpen(false);
   };

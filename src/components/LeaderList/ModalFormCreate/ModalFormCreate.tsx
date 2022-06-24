@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 // HOOKS
 import { useSelector } from 'react-redux';
 // REDUX
-import getLeaders from '../../../store/appStores/leaderStore/selector';
+import getLeaders from '../../../store/appStores/leaderStore/selectorLeaders';
 import leaderActions from '../../../store/appStores/leaderStore/leaderAction';
 // MODELS
 import { IModalFormCreate } from '../../../models/models';

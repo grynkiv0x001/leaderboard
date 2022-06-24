@@ -4,7 +4,7 @@
   width: 80%;
   margin: 0 auto;
   padding: 10px 0;
-  background-color:$highest-leaders-bg-color;
+  background-color: $highest-leaders-bg-color;
   border-radius: 20px;
   box-shadow: $general-box-shadow;
 
@@ -35,6 +35,32 @@
       width: 70%;
     }
   }
+
+  @media (max-width: 600px) {
+    &_img {
+      display: none;
+    }
+    &_box {
+      color: white;
+      width: 100%;
+    }
+    &_heading {
+      text-align: center;
+    }
+  }
+  @media (max-width: 450px) {
+    .leaders{
+      width: 90%;
+    }
+    &_container {
+      padding: 0 20px;
+    }
+  }
+}
+@media (max-width: 450px) {
+  .leaders{
+    width: 95%;
+  }
 }
 
 .list {
@@ -44,7 +70,7 @@
   list-style-type: none;
 
   &_item {
-    width: 10%;
+    width: 100px;
     margin: 0 5% 0 0;
 
     &-avatar {
@@ -52,8 +78,8 @@
 
       img {
         border-radius: 10px;
-        width: 100%;
-        height: 100%;
+        width: 100px;
+        height: 100px;
       }
     }
 
@@ -62,13 +88,69 @@
     }
 
     &-score {
+      font-size: 20px;
       padding: 0 2.5px;
       font-weight: bold;
     }
 
     &-name {
+      font-size: 20px;
       font-weight: bold;
       padding: 0 2.5px;
+    }
+
+    @media (max-width: 1440px) {
+      &-avatar {
+        img {
+          border-radius: 10px;
+          width: 70px;
+          height: 70px;
+        }
+      }
+      &-score {
+        font-size: 14px;
+      }
+
+      &-name {
+        font-size: 14px;
+      }
+    }
+    @media (max-width: 769px) {
+      &-avatar {
+        img {
+          border-radius: 10px;
+          width: 60px;
+          height: 60px;
+        }
+      }
+      &-score {
+        font-size: 14px;
+      }
+
+      &-name {
+        font-size: 14px;
+      }
+    }
+    @media (max-width: 450px) {
+      &-avatar {
+        img {
+          border-radius: 10px;
+          width: 50px;
+          height: 50px;
+        }
+      }
+      &-score {
+        font-size: 14px;
+      }
+
+      &-name {
+        font-size: 14px;
+      }
+    }
+  }
+  @media (max-width: 600px) {
+    &_item {
+      margin: 0;
     }
   }
 }

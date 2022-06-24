@@ -2,13 +2,22 @@ import store from '../../store';
 import axios from 'axios';
 import { API_URL } from '../../../constant/API';
 import { User } from '../../../models/models';
-import { ADD_LIST, ADD_USER, EDIT_USER, SET_LIST } from '../../../constant/TYPES';
+import { ADD_LIST, ADD_USER, EDD_DIFFERENCE, EDIT_USER, SET_LIST } from '../../../constant/TYPES';
 const { dispatch } = store;
 
 const sortByScore = (arr: Array<User>) => {
   arr.sort((el) => (el.score ? 1 : -1));
   arr.sort((a, b) => (a.score < b.score ? 1 : -1));
   return arr;
+};
+const responseApi = (data: Array<User>) => {
+  const users = sortByScore(data);
+  users.map((user) => {
+    if (user.score == undefined) {
+      user.score = 0;
+    }
+  });
+  leaderActions.addList(users);
 };
 
 axios.interceptors.response.use(
@@ -18,8 +27,7 @@ axios.interceptors.response.use(
   (error) => {
     if (error.response && error.response.status === 500) {
       axios.get(API_URL).then((data) => {
-        const users = sortByScore(data.data);
-        leaderActions.addList(users);
+        responseApi(data.data);
       });
     }
     return Promise.reject(error);
@@ -29,8 +37,7 @@ axios.interceptors.response.use(
 const leaderActions = {
   loadLeaderBoard: async () => {
     await axios.get(API_URL).then((data) => {
-      const users = sortByScore(data.data);
-      leaderActions.addList(users);
+      responseApi(data.data);
     });
   },
   addList: async (data: Array<object>) => {
@@ -55,6 +62,12 @@ const leaderActions = {
     dispatch({
       type: EDIT_USER,
       leaders: user,
+    });
+  },
+  addDifference: async (arr: Array<object>) => {
+    dispatch({
+      type: EDD_DIFFERENCE,
+      leaders: arr,
     });
   },
 };
